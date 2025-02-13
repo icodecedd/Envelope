@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Surprise Inside!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <div class="valentines-day-card">
+        <input id="open" type="checkbox">
+        <label class="open" for="open" onclick="playSong()"></label>
+        <div class="card-front">
+            <div class="note">Click to Open 🌹</div>
+        </div>
+        
+        <div class="card-inside">
+          <div class="text-one">Happy</div>
+          <p class="message">I just wanted to show my appreciation for you. 
+                            No special reason—just gratitude for the person you are. 
+                            I hope this brightens your day, even just a little.  
+                            Always wishing you happiness. 😊</p>
+          <div class="picture"><img src="picturemogs.png" alt=""></div>
+        </div>
+    </div>
+
+    <audio id="song" src="NIKI - Take A Chance With Me (Lyrics).mp3"></audio>
+
+    <script>
+        function openEnvelope() {
+            document.querySelector('.flap').style.transform = "rotateX(180deg)";
+            document.querySelector('.letter').style.transform = "translate(-50%, 0)";
+            setTimeout(() => {
+                document.querySelector('.play-btn').style.display = "block";
+            }, 500);
+        }
+
+        function playSong() {
+            const song = document.getElementById("song");
+            song.currentTime = 97;
+            song.play()
+        }
+    </script>
+
+</body>
+</html>
